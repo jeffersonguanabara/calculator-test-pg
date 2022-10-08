@@ -28,9 +28,9 @@ public class CalculatorControllerV1 {
 	ProductRepository productRepository;
 
 	@GetMapping
-	public Product getProductWithDiscount(Long id, String clientType, Integer quantity) {
+	public Product getProductWithDiscount(Long produtId, String clientType, Integer quantity) {
 		Double discountFactor = discountFactorCalculationService.calculate(clientType, quantity);
-		Optional<Product> productOptional = productRepository.findById(id);
+		Optional<Product> productOptional = productRepository.findById(produtId);
 		Product product;
 		if (productOptional.isPresent()) {
 			product = productOptional.get();
