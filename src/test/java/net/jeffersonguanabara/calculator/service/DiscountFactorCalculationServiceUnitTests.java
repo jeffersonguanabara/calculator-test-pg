@@ -6,12 +6,14 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 @SpringBootTest
+@AutoConfigureMockMvc
 @DisplayName("Testes do Serviço de Cálculo do Fator de Desconto")
 public class DiscountFactorCalculationServiceUnitTests {
 

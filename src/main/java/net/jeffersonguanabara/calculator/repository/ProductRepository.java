@@ -1,8 +1,11 @@
 package net.jeffersonguanabara.calculator.repository;
 
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
 import net.jeffersonguanabara.calculator.model.Product;
 
-public interface ProductRepository {
+@Repository
+public interface ProductRepository extends CrudRepository<Product, Long>{
 
-	Product findById(Long id);
 }
