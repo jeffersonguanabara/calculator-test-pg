@@ -3,8 +3,7 @@ package net.jeffersonguanabara.calculator.service;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,15 +12,14 @@ import net.jeffersonguanabara.calculator.model.Product;
 import net.jeffersonguanabara.calculator.repository.stub.ProductRepositoryStub;
 
 @SpringBootTest
-@DisplayName("")
 public class ProductDiscountCalculationServiceIntegrationTest {
 	
 	@Autowired
 	ProductDiscountCalculationService driver;
 	static ProductRepositoryStub productRepository;
 	
-	@BeforeAll
-	public void setupAll() {
+	@BeforeEach
+	public void setup() {
 		productRepository = new ProductRepositoryStub();
 	}
 	

@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,6 +27,7 @@ public class CalculatorControllerV1 {
 	@Autowired
 	ProductRepository productRepository;
 
+	@GetMapping
 	public Product getProductWithDiscount(Long id, String clientType, Integer quantity) {
 		Double discountFactor = discountFactorCalculationService.calculate(clientType, quantity);
 		Optional<Product> productOptional = productRepository.findById(id);
@@ -34,7 +36,7 @@ public class CalculatorControllerV1 {
 			product = productOptional.get();
 			return productDiscountCalculationService.calculate(product, discountFactor);
 		}
-		return null;
+		return new Product();
 	}
 
 }
