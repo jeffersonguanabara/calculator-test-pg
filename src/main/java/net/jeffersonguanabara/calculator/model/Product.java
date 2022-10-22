@@ -20,6 +20,12 @@ public class Product {
 	
 	private Double price;
 	
+	public Product() {}
+	
+	public Product(long id, double price) {
+		this.id = id;
+		this.price = price;
+	}
 	public Long getId() {
 		return id;
 	}
